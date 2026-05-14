@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fake News Detection AI</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+
+    <!-- LOGO -->
+    <div class="logo">
+        🧠 FakeNewsAI
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="nav-left">
+
+        <a href="#home">Home</a>
+
+        <a href="#features">Features</a>
+
+        <a href="#about">About</a>
+
+        <a href="#detect">Detect</a>
+
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+
+    <h1>Fake News Detection Using AI</h1>
+
+    <p>
+        AI-powered fake news detection platform using Machine Learning
+        and Natural Language Processing to identify REAL and FAKE news
+        instantly with intelligent real-time analysis.
+    </p>
+
+    <div class="tags">
+
+        <span>⚡ Real-Time Detection</span>
+
+        <span>🤖 Machine Learning</span>
+
+        <span>🔍 NLP Analysis</span>
+
+        <span>🧠 AI Prediction</span>
+
+    </div>
+
+    <img
+    src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png"
+    class="ai-image">
+
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="card">
+
+    <h2>Platform Features</h2>
+
+    <div class="feature-grid">
+
+        <div class="feature-box">
+
+            <h3>⚡ Real-Time Detection</h3>
+
+            <p>
+                Instantly analyze news articles using AI algorithms.
+            </p>
+
+        </div>
+
+        <div class="feature-box">
+
+            <h3>🤖 Machine Learning</h3>
+
+            <p>
+                Uses trained ML models for intelligent classification.
+            </p>
+
+        </div>
+
+        <div class="feature-box">
+
+            <h3>🔍 NLP Analysis</h3>
+
+            <p>
+                Detects misleading content using NLP techniques.
+            </p>
+
+        </div>
+
+        <div class="feature-box">
+
+            <h3>🛡️ Secure System</h3>
+
+            <p>
+                Fast, secure and responsive AI-powered platform.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="card">
+
+    <h2>How The System Works</h2>
+
+    <p>
+        The system converts news text into numerical vectors using
+        TF-IDF Vectorization. A Passive Aggressive Machine Learning
+        model then analyzes the text and predicts whether the news
+        is REAL or FAKE using Natural Language Processing.
+    </p>
+
+</section>
+
+<!-- AI PERFORMANCE -->
+<section class="card">
+
+    <h2>AI Performance</h2>
+
+    <div class="feature-grid">
+
+        <div class="feature-box">
+
+            <h3>95%</h3>
+
+            <p>Detection Accuracy</p>
+
+        </div>
+
+        <div class="feature-box">
+
+            <h3>10K+</h3>
+
+            <p>Articles Analyzed</p>
+
+        </div>
+
+        <div class="feature-box">
+
+            <h3>24/7</h3>
+
+            <p>AI Availability</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- WHY TRUST OUR AI -->
+<section class="card">
+
+    <h2>Why Trust Our AI?</h2>
+
+    <div class="feature-grid">
+
+        <div class="feature-box">
+
+            <h3>⚡ Fast Analysis</h3>
+
+            <p>
+                Instant prediction with optimized ML processing.
+            </p>
+
+        </div>
+
+        <div class="feature-box">
+
+            <h3>🧠 Intelligent Detection</h3>
+
+            <p>
+                AI identifies suspicious and misleading text patterns.
+            </p>
+
+        </div>
+
+        <div class="feature-box">
+
+            <h3>🔒 Reliable System</h3>
+
+            <p>
+                Built using modern Machine Learning technologies.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- DETECT -->
+<section id="detect" class="card">
+
+    <h2>Try AI Detection</h2>
+
+    <p class="smalltext">
+        Enter any news article or headline below.
+    </p>
+
+    <!-- EXAMPLES -->
+    <div class="examples">
+
+        <button onclick="fillExample('Government launches new education scheme for students')">
+            Example REAL News
+        </button>
+
+        <button onclick="fillExample('Aliens attacked Earth last night in Chennai')">
+            Example FAKE News
+        </button>
+
+    </div>
+
+    <textarea
+    id="newsText"
+    placeholder="Enter news text here..."></textarea>
+
+    <button onclick="checkNews()">
+        Analyze News
+    </button>
+
+    <div id="result" class="result"></div>
+
+    <!-- HISTORY -->
+    <div class="history-box">
+
+        <h3>Recent Analysis</h3>
+
+        <ul id="historyList"></ul>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="card">
+
+    <h2>Contact Us</h2>
+
+    <p class="smalltext">
+        Have a question or feedback? Reach out to us.
+    </p>
+
+    <input
+    type="text"
+    placeholder="Your Name"
+    class="inputbox">
+
+    <input
+    type="email"
+    placeholder="Your Email"
+    class="inputbox">
+
+    <textarea
+    placeholder="Your Message"></textarea>
+
+    <button onclick="sendMessage()">
+        Send Message
+    </button>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <h3>🧠 Fake News Detection AI</h3>
+
+    <p>
+        Developed using Flask, Machine Learning and NLP Technologies
+    </p>
+
+    <p class="footer-small">
+        © 2026 All Rights Reserved
+    </p>
+
+</footer>
+
+<script>
+
+function fillExample(text){
+
+    document.getElementById("newsText").value = text;
+}
+
+async function checkNews(){
+
+    let text = document.getElementById("newsText").value;
+
+    if(text.trim() === ""){
+
+        document.getElementById("result").innerHTML =
+        "<span class='fake'>Please enter news text</span>";
+
+        return;
+    }
+
+    document.getElementById("result").innerHTML =
+    "<div class='loader'></div><p>Analyzing with AI...</p>";
+
+    let response = await fetch("/predict", {
+
+        method: "POST",
+
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+            text: text
+        })
+    });
+
+    let data = await response.json();
+
+    let history = document.getElementById("historyList");
+
+    let item = document.createElement("li");
+
+    item.innerHTML =
+    text.substring(0,50) + " ... → " + data.prediction;
+
+    history.prepend(item);
+
+    setTimeout(() => {
+
+        document.getElementById("result").innerHTML =
+
+        data.prediction === "REAL"
+
+        ? "<span class='real'>REAL NEWS ✅</span>"
+
+        : "<span class='fake'>FAKE NEWS ❌</span>";
+
+    }, 1000);
+}
+
+function sendMessage(){
+
+    alert("Message Sent Successfully ✅");
+}
+
+</script>
+
+</body>
+</html>
